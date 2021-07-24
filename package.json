@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --silent --colors --noStackTrace",
-    "test-staged": "jest --passWithNoTests --silent --colors --noStackTrace",
-    "test-ci": "jest --silent --colors --noStackTrace --coverage",
+    "test-default":"jest --silent --colors --noStackTrace --passWithNoTests",
+    "test-unit": "npm run test-default -- --watch --config jest.unit.config.ts",
+    "test-integration": "npm run test-default -- --watch --config jest.integration.config.ts",
+    "test-staged": "npm run test-default --",
+    "test-ci": "npm run test-default -- --coverage",
     "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/app.ts",
     "prepare": "husky install"
   },

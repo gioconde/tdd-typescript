@@ -1,7 +1,7 @@
 {
   "name": "tdd-typescript",
-  "version": "0.0.1",
-  "description": "Projeto base em TypeScript para aplicar metodologia TDD.",
+  "version": "1.0.0",
+  "description": "Projeto base para aplicações NodeJS em TypeScript, utilizando metodologia TDD.",
   "license": "MIT",
   "keywords": [
     "clean architecture",
@@ -27,7 +27,7 @@
     "start": "node dist/main",
     "clean": "rimraf dist",
     "build": "npm run clean && tsc -p tsconfig-build.json",
-    "prepare": "husky install && npx husky add .husky/pre-commit \"npx lint-staged\" && npx husky add .husky/pre-push \"npm run test:coverage\"",
+    "prepare": "husky install",
     "check": "npm-check -s -u",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
@@ -35,18 +35,11 @@
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
     "test:coverage": "npm test -- --coverage",
-    "test:fb-api": "npm test -- -c ./jest.integration.config.js ./tests/external/facebook-api.test.ts"
+    "test:fb-api": "npm test -- -c ./jest.integration.config.js"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
     "module-alias": "^2.2.2",
-    "pg": "^8.6.0",
-    "reflect-metadata": "^0.1.13",
-    "rimraf": "^3.0.2",
-    "typeorm": "0.2.29"
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@jest-mock/express": "^1.4.2",

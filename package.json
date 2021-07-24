@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll",
-    "test-staged": "jest",
+    "test": "jest --watchAll --silent --colors --noStackTrace",
+    "test-staged": "jest --passWithNoTests --silent --colors --noStackTrace",
     "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/app.ts",
     "prepare": "husky install"
   },
